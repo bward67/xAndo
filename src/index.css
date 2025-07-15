@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: blueviolet;
+  background-color: #f0f0f0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+button {
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: inherit;
+  outline: none;
+  border: none;
+}
+.board {
+  border: 4px solid blueviolet;
+  border-radius: 10px;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.square-btn {
+  background: #ffffff;
+  border: 2px solid blueviolet;
+  outline: none;
+  font-size: 30px;
+  font-weight: 800;
+  /* color: blueviolet; */
+  padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+}
+button:hover {
+  /* background-color: blueviolet; */
+  color: white;
+}
+.symbol-x {
+  color: blueviolet;
+}
+.symbol-x:hover {
+  background-color: blueviolet;
+  /* color: #fff; */
+}
+.symbol-o {
+  color: orangered;
+}
+.symbol-o:hover {
+  background-color: orangered;
+  /* color: #fff; */
+}
+
+.new-game-btn {
+  padding: 0.5rem;
+  color: #fff;
+  background-color: blueviolet;
+  border-radius: 10px;
+}
+
+.message {
+  margin-block: 1rem;
+}
+.winner-message {
+  font-size: 2.5rem;
+  padding: 1rem;
+}
+.message-board {
+  text-align: center;
+}
