@@ -9,6 +9,9 @@ const Game = () => {
   const [xIsNext, setXIsNext] = useState(true);
 
   const winner = calculateWinner(board);
+  const isDraw = !winner && board.every((square) => square !== null);
+
+  console.log(board);
 
   const handleClick = (index) => {
     //console.log("handle click in action");
@@ -43,21 +46,27 @@ const Game = () => {
             style={
               winner
                 ? { color: winner === "X" ? "blueviolet" : "orangered" }
+                : isDraw
+                ? { color: "#666" }
                 : {}
             }
           >
             {winner
               ? `Well Done ${winner} - you are the Winner 🥳`
+              : isDraw
+              ? "It's a Draw! 😐"
               : "Next Player: " + (xIsNext ? "X" : "O")}
           </p>
-
-          {winner && (
+          {/* or if the game is a draw - the board array length will be 9 BUT none will be null */}
+          {winner || isDraw ? (
             <button
               className="new-game-btn"
               onClick={() => setBoard(Array(9).fill(null))}
             >
               Play New Game
             </button>
+          ) : (
+            ""
           )}
         </div>
       </>
